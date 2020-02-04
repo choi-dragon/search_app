@@ -1,6 +1,7 @@
 const express=require('express')
 const app=express()
 const path=require('path')
+const port = process.env.PORT || 3000 
 const hbs=require('hbs')
 const request=require('request')
 const places=require('./places')
@@ -69,6 +70,9 @@ app.get('/search',(req,res)=>{
 // }
 
 
-app.listen(3000,()=>{
-    console.log('Server is up on port 3000')
+// app.listen(3000,()=>{
+//     console.log('Server is up on port 3000')
+// })
+app.listen(port,()=>{// this finally sets the server
+    console.log('Server is up on port '+port)
 })
